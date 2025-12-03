@@ -1,7 +1,7 @@
 
 import 'package:flutter/material.dart';
 import 'home_page.dart';
-import 'Forgot_password_page.dart';
+import 'forgot_password_page.dart';
 
 class Loginpage extends StatefulWidget {
   const Loginpage({super.key});
@@ -47,12 +47,11 @@ bool isChecked=false;
         child: Padding(
           padding: EdgeInsets.all(20),
           child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            crossAxisAlignment: CrossAxisAlignment.center,
             children: [
               Icon(Icons.lock, size: 100, color: Colors.grey),
-
               SizedBox(height: 20),
-
               // USER ID
               TextField(
                 controller: userController,
@@ -61,9 +60,7 @@ bool isChecked=false;
                   border: OutlineInputBorder(),
                 ),
               ),
-
               SizedBox(height: 20),
-
               // PASSWORD
               TextField(
                 controller: passController,
@@ -110,20 +107,45 @@ bool isChecked=false;
                   ),
                 ],
               ),
-
-
-
-              SizedBox(height: 30,width:100),
-
+                  SizedBox(height: 30,width:100),
               ElevatedButton(
                 onPressed: login,
                 style: ElevatedButton.styleFrom(backgroundColor: Colors.green,
-
                   minimumSize:Size(200, 50),
                   maximumSize: Size(200, 60),
                 ),
                 child: Text("Log In"),
               ),
+
+                  Center(child:GestureDetector(onTap:(){
+                  },
+                      child:ElevatedButton(onPressed:(){},
+                          style:ElevatedButton.styleFrom(
+                              side: BorderSide(color: Colors.green, width: 2), // Border color
+                              shape: RoundedRectangleBorder(
+                                  borderRadius: BorderRadius.circular(10),),),
+                          child:Row(mainAxisSize: MainAxisSize.min,
+                              children:[Icon(Icons.email_rounded, size: 28),
+                            SizedBox(width:10),
+                            Text("Login with Gmail"),])))
+                  ),
+
+                  Center(child:GestureDetector(onTap:(){
+                  },
+                      child:ElevatedButton(onPressed:(){},
+                          style:ElevatedButton.styleFrom(
+                            side: BorderSide(color: Colors.green, width: 2), // Border color
+                            shape: RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(10),),),
+
+                          child:Row(mainAxisSize: MainAxisSize.min,
+                            children:[Icon(Icons.apple, size: 28),
+                          SizedBox(width:10),
+                          Text("Login with Apple"),
+                          ],),),
+
+                  ),),
+
 
 
             ],

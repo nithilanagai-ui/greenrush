@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-
+import 'payment_page.dart';
 class BooknowPage extends StatefulWidget {
   final String courtName;
   final String courtImage;
@@ -12,6 +12,8 @@ class BooknowPage extends StatefulWidget {
 
 class BooknowPageState extends State<BooknowPage> {
   String? selectedSlot;
+  String? courtName;
+  String? slot;
 
   final List<String> timeSlots = [
     "7:00 AM - 8:00 AM",
@@ -92,7 +94,12 @@ Spacer(),
                           "Booked ${widget.courtName} for $selectedSlot"),
                     ),
                   );
-                },
+                Navigator.push(context,
+                  MaterialPageRoute(builder: (context)=>Paymentpage(
+                  courtName:widget.courtName,
+                  slot:selectedSlot!,
+                ),),);
+                  },
                 child: Text("Confirm Booking"),
               ),
             )

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'court_list_page.dart';
+import 'account_page.dart';
 
 void main(){
   runApp(MaterialApp(debugShowCheckedModeBanner: false,
@@ -20,7 +21,7 @@ class Homepage extends StatelessWidget {
         Container(
           decoration: const BoxDecoration(
             gradient: LinearGradient(
-              colors: [Colors.blue, Colors.purple],
+              colors: [Colors.lightGreen, Colors.green],
               begin: Alignment.topLeft,
               end: Alignment.bottomRight,
             ),
@@ -163,7 +164,9 @@ class SettingspageState extends State<Settingspage> {
         leading: Icon(Icons.person),
       title: Text("Account"),
       subtitle: Text("Profile, phone number"),
-      onTap: () {
+      onTap: () {Navigator.push(context,
+        MaterialPageRoute<void>(
+        builder: (context)=> Accountpage(),),);
 
       },
     ),
